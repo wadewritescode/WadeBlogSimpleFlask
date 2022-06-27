@@ -10,7 +10,9 @@ from flask_login import UserMixin, login_user, LoginManager, login_required, cur
 from forms import CreatePostForm, NewUser, Login, CreateCommentForm
 from flask_gravatar import Gravatar
 from functools import wraps
+import os
 
+print(os.environ.get("PYTHONUNBUFFERED"))
 
 
 app = Flask(__name__)
@@ -221,8 +223,6 @@ def delete_post(post_id):
     db.session.delete(post_to_delete)
     db.session.commit()
     return redirect(url_for('get_all_posts'))
-
-
 
 
 
