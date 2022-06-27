@@ -10,9 +10,6 @@ from flask_login import UserMixin, login_user, LoginManager, login_required, cur
 from forms import CreatePostForm, NewUser, Login, CreateCommentForm
 from flask_gravatar import Gravatar
 from functools import wraps
-import os
-
-print(os.environ.get("PYTHONUNBUFFERED"))
 
 
 app = Flask(__name__)
